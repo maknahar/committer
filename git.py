@@ -1,9 +1,12 @@
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
 import os
 import signal
 import subprocess
 import sys
+
+print sys.path[0]
 
 p = subprocess.Popen(['git', 'status'], stdout=subprocess.PIPE)
 while True:
@@ -33,7 +36,7 @@ while True:
         break
 
 
-print "\n☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ \nFinished Committing all new and modified Files.\n☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ \n\nGit Status Now :"
+print "\n☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ \nFinished Committing all new and modified Files.\n☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ \n\nGit Status Now:\n"
 os.system("git status")
 
 p.kill()
