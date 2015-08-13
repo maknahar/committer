@@ -31,7 +31,11 @@ while True:
         print "\nCHANGES: New File\n"
         os.system("git diff "+mfile)
         commit_msg = raw_input("\nEnter Commit Message: ")
-        os.system("git commit "+mfile+ " -m \""+commit_msg+"\"")
+        description = raw_input("\nEnter Commit Description(Optional):")
+        if description == "":
+            os.system("git commit "+mfile+ " -m \""+commit_msg+"\"")
+        else:
+            os.system("git commit "+mfile+ " -m \""+commit_msg+"\""+ " -m \""+description+"\"")
 
     if line == '':
         break
