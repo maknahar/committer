@@ -38,6 +38,6 @@ while True:
 
     if line == '':
         break
-
+print "☺ ☺ ☺ ☺ ☺ ☺\nFinished Committing all new and modified Files.\n☺ ☺ ☺ ☺ ☺ ☺\n Git Status Now :"
 os.system("git status")
 p.kill()
