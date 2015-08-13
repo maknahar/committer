@@ -16,7 +16,7 @@ while True:
         print "\nFILE NAME:",mfile
         print "\n\nCHANGES: \n"
         os.system("git diff "+mfile)
-        commit_msg = raw_input("Enter Commit Message: ")
+        commit_msg = raw_input("\nEnter Commit Message: ")
         os.system("git commit "+mfile+ " -m \""+commit_msg+"\"")
 
 
@@ -26,11 +26,14 @@ while True:
         print "\nFILE NAME:",mfile
         print "\nCHANGES: New File\n"
         os.system("git diff "+mfile)
-        commit_msg = raw_input("Enter Commit Message: ")
+        commit_msg = raw_input("\nEnter Commit Message: ")
         os.system("git commit "+mfile+ " -m \""+commit_msg+"\"")
 
     if line == '':
         break
-print "☺ ☺ ☺ ☺ ☺ ☺\nFinished Committing all new and modified Files.\n☺ ☺ ☺ ☺ ☺ ☺\n Git Status Now :"
+
+
+print "☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ \nFinished Committing all new and modified Files.\n☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ \n Git Status Now :"
 os.system("git status")
+
 p.kill()
