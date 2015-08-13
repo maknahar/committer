@@ -33,7 +33,7 @@ while True:
         break
 
 
-print "☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ \nFinished Committing all new and modified Files.\n☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ \n Git Status Now :"
+print "\n☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ \nFinished Committing all new and modified Files.\n☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ \n Git Status Now :"
 os.system("git status")
 
 p.kill()
