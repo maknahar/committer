@@ -6,8 +6,6 @@ import signal
 import subprocess
 import sys
 
-print sys.path[0]
-
 p = subprocess.Popen(['git', 'status'], stdout=subprocess.PIPE)
 while True:
     line = p.stdout.readline()
@@ -19,9 +17,12 @@ while True:
         print "\nFILE NAME:",mfile
         print "\n\nCHANGES: \n"
         os.system("git diff "+mfile)
-        commit_msg = raw_input("\nEnter Commit Message: ")
-        os.system("git commit "+mfile+ " -m \""+commit_msg+"\"")
-
+        commit_msg = raw_input("\nEnter Commit Title: ")
+        description = raw_input("\nEnter Commit Description(Optional):")
+        if description == "":
+            os.system("git commit "+mfile+ " -m \""+commit_msg+"\"")
+        else:
+            os.system("git commit "+mfile+ " -m \""+commit_msg+"\""+ " -m \""+description+"\"")
 
     if 'new file:' in line:
         mfile= line.split("new file:   ",1)[1].strip("\n")
