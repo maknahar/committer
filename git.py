@@ -51,10 +51,10 @@ while True:
         break
 
 
-print bcolors.OKGREEN+"\n☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ \n"
-print bcolors.OKBLUE+ "Finished Committing all new and modified Files.\n"
-print bcolors.OKGREEN+"☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ \n\n"
-print bcolors.BOLD+"Git Status Now:\n"
+print bcolors.OKGREEN+"\n☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ \n"+bcolors.ENDC
+print bcolors.OKBLUE+ "Finished Committing all new and modified Files.\n"+bcolors.ENDC
+print bcolors.OKGREEN+"☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ \n\n"+bcolors.ENDC
+print bcolors.BOLD+"Git Status Now:\n"+bcolors.ENDC
 os.system("git status")
 
 p.kill()
