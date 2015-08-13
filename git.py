@@ -1,11 +1,4 @@
-#import subprocess
-#import tempfile
-
-#with tempfile.TemporaryFile() as tempf:
-#    proc = subprocess.Popen(['git', 'status'], stdout=tempf)
-#    proc.wait()
-#    tempf.seek(0)
-#    print tempf.read()
+# -*- coding: utf-8 -*-
 
 import os
 import signal
@@ -21,7 +14,7 @@ while True:
     if 'modified:' in line:
         mfile= line.split("modified:   ",1)[1].strip("\n")
         print "\nFILE NAME:",mfile
-        print "\nCHANGES: \n"
+        print "\n\nCHANGES: \n"
         os.system("git diff "+mfile)
         commit_msg = raw_input("Enter Commit Message: ")
         os.system("git commit "+mfile+ " -m \""+commit_msg+"\"")
