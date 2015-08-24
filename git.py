@@ -27,7 +27,8 @@ while True:
         print "\nFILE NAME:",mfile
         print "\n\nCHANGES: \n"
         os.system("git diff "+mfile)
-        commit_msg = raw_input("\nCommit Title\n i: ignore this file\n p: Performance Improvement\n b: Bug Fix\n c: Build Issue\n a: Added new feature\nEnter Commit Title: ")
+        commit_msg = raw_input("\nCommit Title\n i: ignore this file\n p: Performance Improvement\n b: Bug Fix\n c: Build Issue\n a: Added new feature\n d: Debuging\nEnter Commit Title: ")
+
         if commit_msg!="i":
             if commit_msg=="p":
                 commit_msg="Performance Improvement"
@@ -37,6 +38,8 @@ while True:
                 commit_msg="Build Issue"
             if commit_msg=="a":
                 commit_msg="Added new feature"
+            if commit_msg=="d":
+                commit_msg="Debuging"
 
             description = raw_input("\nEnter Commit Description(Optional):")
             if description == "":
@@ -50,7 +53,8 @@ while True:
         print "\nFILE NAME:",mfile
         print "\nCHANGES: New File\n"
         os.system("git diff "+mfile)
-        commit_msg = raw_input("\nCommit Title\n i: ignore this file\n p: Performance Improvement\n b: Bug Fix\n c: Build Issue\n a: Added new feature\nEnter Commit Title: ")
+        commit_msg = raw_input("\nCommit Title\n i: ignore this file\n p: Performance Improvement\n b: Bug Fix\n c: Build Issue\n a: Added new feature\n d: Debuging\nEnter Commit Title: ")
+
         if commit_msg!="i":
             if commit_msg=="p":
                 commit_msg="Performance Improvement"
@@ -60,6 +64,9 @@ while True:
                 commit_msg="Build Issue"
             if commit_msg=="a":
                 commit_msg="Added new feature"
+            if commit_msg=="d":
+                commit_msg="Debuging"
+
             description = raw_input("\nEnter Commit Description(Optional):")
             if description == "":
                 os.system("git commit "+mfile+ " -m \""+commit_msg+"\"")
