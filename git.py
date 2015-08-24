@@ -27,12 +27,13 @@ while True:
         print "\nFILE NAME:",mfile
         print "\n\nCHANGES: \n"
         os.system("git diff "+mfile)
-        commit_msg = raw_input("\nEnter Commit Title: ")
-        description = raw_input("\nEnter Commit Description(Optional):")
-        if description == "":
-            os.system("git commit "+mfile+ " -m \""+commit_msg+"\"")
-        else:
-            os.system("git commit "+mfile+ " -m \""+commit_msg+"\""+ " -m \""+description+"\"")
+        commit_msg = raw_input("\nEnter Commit Title (Enter i to ignore): ")
+        if commit_msg!="i":
+            description = raw_input("\nEnter Commit Description(Optional):")
+            if description == "":
+                os.system("git commit "+mfile+ " -m \""+commit_msg+"\"")
+            else:
+                os.system("git commit "+mfile+ " -m \""+commit_msg+"\""+ " -m \""+description+"\"")
 
     if 'new file:' in line:
         mfile= line.split("new file:   ",1)[1].strip("\n")
@@ -41,11 +42,12 @@ while True:
         print "\nCHANGES: New File\n"
         os.system("git diff "+mfile)
         commit_msg = raw_input("\nEnter Commit Message: ")
-        description = raw_input("\nEnter Commit Description(Optional):")
-        if description == "":
-            os.system("git commit "+mfile+ " -m \""+commit_msg+"\"")
-        else:
-            os.system("git commit "+mfile+ " -m \""+commit_msg+"\""+ " -m \""+description+"\"")
+        if commit_msg!="i":
+            description = raw_input("\nEnter Commit Description(Optional):")
+            if description == "":
+                os.system("git commit "+mfile+ " -m \""+commit_msg+"\"")
+            else:
+                os.system("git commit "+mfile+ " -m \""+commit_msg+"\""+ " -m \""+description+"\"")
 
     if line == '':
         break
