@@ -29,7 +29,7 @@ while True:
         print "\nFILE NAME:",mfile
         print "\n\nCHANGES: \n"
         os.system("git diff "+mfile)
-        commit_msg = raw_input("\nCommit Title\n i: ignore this file\n p: Performance Improvement\n b: Bug Fix\n c: Build Issue\n a: Added new feature\n d: Debuging\n r: Reorganized the code\nEnter Commit Title: ")
+        commit_msg = raw_input("\nCommit Title\n a: Added new feature\n b: Bug Fix\n c: Build Issue\n d: Debuging\n i: ignore this file\n p: Performance Improvement\n r: Reorganized the code\nEnter Commit Title: ")
 
         if commit_msg!="i":
             push = True
@@ -59,7 +59,7 @@ while True:
         print "\nFILE NAME:",mfile
         print "\nCHANGES: New File\n"
         os.system("git diff "+mfile)
-        commit_msg = raw_input("\nCommit Title\n i: ignore this file\n p: Performance Improvement\n b: Bug Fix\n c: Build Issue\n a: Added new feature\n d: Debuging\n r: Reorganized the code\nEnter Commit Title: ")
+        commit_msg = raw_input("\nCommit Title\n a: Added new feature\n b: Bug Fix\n c: Build Issue\n d: Debuging\n i: ignore this file\n p: Performance Improvement\n r: Reorganized the code\nEnter Commit Title: ")
 
         if commit_msg!="i":
             push = True
