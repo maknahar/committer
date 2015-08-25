@@ -82,5 +82,8 @@ print bcolors.OKBLUE+ "Finished Committing all new and modified Files."+bcolors.
 print bcolors.OKGREEN+"☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ \n"+bcolors.ENDC
 print bcolors.BOLD+"Git Status Now:\n"+bcolors.ENDC
 os.system("git status")
+confirm = raw_input('\n\nDo you want to Push to remote?(Y/N)')
+if confirm=='Y' or confirm=='y':
+    os.system("git push")
 
 p.kill()
