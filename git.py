@@ -17,12 +17,12 @@ class bcolors:
     UNDERLINE = '\033[4m'
 
 p = subprocess.Popen(['git', 'status'], stdout=subprocess.PIPE)
+push = False
 while True:
     line = p.stdout.readline()
 
     #sys.stdout.write(line)
     sys.stdout.flush()
-    push = True
     if 'modified:' in line:
         mfile= line.split("modified:   ",1)[1].strip("\n")
         print "\nFILE NAME:",mfile
