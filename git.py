@@ -18,6 +18,7 @@ class bcolors:
 
 p = subprocess.Popen(['git', 'status'], stdout=subprocess.PIPE)
 push = False
+
 while True:
     line = p.stdout.readline()
 
