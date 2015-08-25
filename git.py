@@ -22,6 +22,7 @@ while True:
 
     #sys.stdout.write(line)
     sys.stdout.flush()
+    push = False
     if 'modified:' in line:
         mfile= line.split("modified:   ",1)[1].strip("\n")
         print "\nFILE NAME:",mfile
@@ -46,6 +47,7 @@ while True:
                 os.system("git commit "+mfile+ " -m \""+commit_msg+"\"")
             else:
                 os.system("git commit "+mfile+ " -m \""+commit_msg+"\""+ " -m \""+description+"\"")
+            push = True
 
     if 'new file:' in line:
         mfile= line.split("new file:   ",1)[1].strip("\n")
@@ -72,6 +74,7 @@ while True:
                 os.system("git commit "+mfile+ " -m \""+commit_msg+"\"")
             else:
                 os.system("git commit "+mfile+ " -m \""+commit_msg+"\""+ " -m \""+description+"\"")
+            push = True
 
     if line == '':
         break
@@ -82,8 +85,10 @@ print bcolors.OKBLUE+ "Finished Committing all new and modified Files."+bcolors.
 print bcolors.OKGREEN+"☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ \n"+bcolors.ENDC
 print bcolors.BOLD+"Git Status Now:\n"+bcolors.ENDC
 os.system("git status")
-confirm = raw_input('\n\nDo you want to Push to remote?(Y/N)')
-if confirm=='Y' or confirm=='y':
-    os.system("git push")
+
+if push==True:
+    confirm = raw_input('\n\nDo you want to Push to remote?(Y/N)')
+    if confirm=='Y' or confirm=='y':
+        os.system("git push")
 
 p.kill()
