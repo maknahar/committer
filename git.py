@@ -22,7 +22,7 @@ while True:
 
     #sys.stdout.write(line)
     sys.stdout.flush()
-    push = False
+    push = True
     if 'modified:' in line:
         mfile= line.split("modified:   ",1)[1].strip("\n")
         print "\nFILE NAME:",mfile
