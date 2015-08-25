@@ -31,6 +31,7 @@ while True:
         commit_msg = raw_input("\nCommit Title\n i: ignore this file\n p: Performance Improvement\n b: Bug Fix\n c: Build Issue\n a: Added new feature\n d: Debuging\nEnter Commit Title: ")
 
         if commit_msg!="i":
+            push = True
             if commit_msg=="p":
                 commit_msg="Performance Improvement"
             if commit_msg=="b":
@@ -47,7 +48,7 @@ while True:
                 os.system("git commit "+mfile+ " -m \""+commit_msg+"\"")
             else:
                 os.system("git commit "+mfile+ " -m \""+commit_msg+"\""+ " -m \""+description+"\"")
-            push = True
+
 
     if 'new file:' in line:
         mfile= line.split("new file:   ",1)[1].strip("\n")
@@ -58,6 +59,7 @@ while True:
         commit_msg = raw_input("\nCommit Title\n i: ignore this file\n p: Performance Improvement\n b: Bug Fix\n c: Build Issue\n a: Added new feature\n d: Debuging\nEnter Commit Title: ")
 
         if commit_msg!="i":
+            push = True
             if commit_msg=="p":
                 commit_msg="Performance Improvement"
             if commit_msg=="b":
@@ -74,7 +76,7 @@ while True:
                 os.system("git commit "+mfile+ " -m \""+commit_msg+"\"")
             else:
                 os.system("git commit "+mfile+ " -m \""+commit_msg+"\""+ " -m \""+description+"\"")
-            push = True
+
 
     if line == '':
         break
