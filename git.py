@@ -18,6 +18,9 @@ class bcolors:
 
 p = subprocess.Popen(['git', 'status'], stdout=subprocess.PIPE)
 push = False
+last_commit_title = ""
+last_commit_desc = ""
+description=""
 
 while True:
     line = p.stdout.readline()
@@ -29,24 +32,32 @@ while True:
         print "\nFILE NAME:",mfile
         print "\n\nCHANGES: \n"
         os.system("git diff "+mfile)
-        commit_msg = raw_input("\nCommit Title\n a: Added new feature\n b: Bug Fix\n c: Build Issue\n d: Debuging\n i: ignore this file\n p: Performance Improvement\n r: Reorganized the code\nEnter Commit Title: ")
+
+        commit_msg = raw_input("\nCommit Title\n a: Added new feature\n b: Bug Fix\n c: Build Issue\n d: Debuging\n i: ignore this file\n p: Performance Improvement\n r: Reorganized the code\n s: same as last file\nEnter Commit Title: ")
 
         if commit_msg!="i":
             push = True
-            if commit_msg=="p":
-                commit_msg="Performance Improvement"
+            if commit_msg=="a":
+                commit_msg="Added new feature"
             if commit_msg=="b":
                 commit_msg="Bug Fix"
             if commit_msg=="c":
                 commit_msg="Build Issue"
-            if commit_msg=="a":
-                commit_msg="Added new feature"
             if commit_msg=="d":
                 commit_msg="Debuging"
+            if commit_msg=="p":
+                commit_msg="Performance Improvement"
             if commit_msg=="r":
                 commit_msg="Rorganized the code"
+            if commit_msg=="s":
+                commit_msg=last_commit_title
+                description=last_commit_desc
 
-            description = raw_input("\nEnter Commit Description(Optional):")
+            if commit_msg!="s":
+                description = raw_input("\nEnter Commit Description(Optional):")
+                last_commit_title=commit_msg
+                last_commit_desc=description
+
             if description == "":
                 os.system("git commit "+mfile+ " -m \""+commit_msg+"\"")
             else:
@@ -59,24 +70,31 @@ while True:
         print "\nFILE NAME:",mfile
         print "\nCHANGES: New File\n"
         os.system("git diff "+mfile)
-        commit_msg = raw_input("\nCommit Title\n a: Added new feature\n b: Bug Fix\n c: Build Issue\n d: Debuging\n i: ignore this file\n p: Performance Improvement\n r: Reorganized the code\nEnter Commit Title: ")
+        commit_msg = raw_input("\nCommit Title\n a: Added new feature\n b: Bug Fix\n c: Build Issue\n d: Debuging\n i: ignore this file\n p: Performance Improvement\n r: Reorganized the code\n s: same as last file\nEnter Commit Title: ")
 
         if commit_msg!="i":
             push = True
-            if commit_msg=="p":
-                commit_msg="Performance Improvement"
+            if commit_msg=="a":
+                commit_msg="Added new feature"
             if commit_msg=="b":
                 commit_msg="Bug Fix"
             if commit_msg=="c":
                 commit_msg="Build Issue"
-            if commit_msg=="a":
-                commit_msg="Added new feature"
             if commit_msg=="d":
                 commit_msg="Debuging"
+            if commit_msg=="p":
+                commit_msg="Performance Improvement"
             if commit_msg=="r":
                 commit_msg="Rorganized the code"
+            if commit_msg=="s":
+                commit_msg=last_commit_title
+                description=last_commit_desc
 
-            description = raw_input("\nEnter Commit Description(Optional):")
+            if commit_msg!="s":
+                description = raw_input("\nEnter Commit Description(Optional):")
+                last_commit_title=commit_msg
+                last_commit_desc=description
+
             if description == "":
                 os.system("git commit "+mfile+ " -m \""+commit_msg+"\"")
             else:
