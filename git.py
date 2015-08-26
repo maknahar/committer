@@ -23,6 +23,7 @@ last_commit_desc = ""
 description=""
 
 while True:
+    new_msg=True
     line = p.stdout.readline()
 
     #sys.stdout.write(line)
@@ -52,8 +53,9 @@ while True:
             if commit_msg=="s":
                 commit_msg=last_commit_title
                 description=last_commit_desc
+                new_msg=False
 
-            if commit_msg!="s":
+            if new_msg:
                 description = raw_input("\nEnter Commit Description(Optional):")
                 last_commit_title=commit_msg
                 last_commit_desc=description
@@ -89,8 +91,9 @@ while True:
             if commit_msg=="s":
                 commit_msg=last_commit_title
                 description=last_commit_desc
+                new_msg=False
 
-            if commit_msg!="s":
+            if new_msg:
                 description = raw_input("\nEnter Commit Description(Optional):")
                 last_commit_title=commit_msg
                 last_commit_desc=description
