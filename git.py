@@ -38,28 +38,28 @@ while True:
 
         if commit_msg!="i":
             push = True
-            if commit_msg=="a":
+            if commit_msg.strip()=="a":
                 commit_msg="Added new feature"
-            if commit_msg=="b":
+            if commit_msg.strip()=="b":
                 commit_msg="Bug Fix"
-            if commit_msg=="c":
+            if commit_msg.strip()=="c":
                 commit_msg="Build Issue"
-            if commit_msg=="d":
+            if commit_msg.strip()=="d":
                 commit_msg="Debuging"
-            if commit_msg=="p":
+            if commit_msg.strip()=="p":
                 commit_msg="Performance Improvement"
-            if commit_msg=="q":
+            if commit_msg.strip()=="q":
                 commit_msg=last_commit_title
                 description=last_commit_desc
                 new_msg=False
-            if commit_msg=="r":
+            if commit_msg.strip()=="r":
                 commit_msg="Refactoring the code"
-            if commit_msg=="t":
+            if commit_msg.strip()=="t":
                 commit_msg="Added test case"
 
             if new_msg:
                 description = raw_input("\nEnter Commit Description(Optional):")
-                last_commit_title=commit_msg
+                last_commit_title=commit_msg.strip()
                 last_commit_desc=description
 
             if description == "":
@@ -76,31 +76,31 @@ while True:
         os.system("git diff "+mfile)
         commit_msg = raw_input("\nCommit Title\n a: Added new feature\n b: Bug Fix\n c: Build Issue\n d: Debuging\n i: ignore this file\n p: Performance Improvement\n q: same as last file\n r: Reorganized the code\n t: Added test case\nEnter Commit Title: ")
 
-        if commit_msg!="i":
+        if commit_msg.strip()!="i":
             push = True
-            if commit_msg=="a":
+            if commit_msg.strip()=="a":
                 commit_msg="Added new feature"
-            if commit_msg=="b":
+            if commit_msg.strip()=="b":
                 commit_msg="Bug Fix"
-            if commit_msg=="c":
+            if commit_msg.strip()=="c":
                 commit_msg="Build Issue"
-            if commit_msg=="d":
+            if commit_msg.strip()=="d":
                 commit_msg="Debuging"
-            if commit_msg=="p":
+            if commit_msg.strip()=="p":
                 commit_msg="Performance Improvement"
-            if commit_msg=="q":
+            if commit_msg.strip()=="q":
                 commit_msg=last_commit_title
                 description=last_commit_desc
                 new_msg=False
-            if commit_msg=="r":
+            if commit_msg.strip()=="r":
                 commit_msg="Rorganized the code"
-            if commit_msg=="t":
+            if commit_msg.strip()=="t":
                 commit_msg="Added test case"
 
 
             if new_msg:
                 description = raw_input("\nEnter Commit Description(Optional):")
-                last_commit_title=commit_msg
+                last_commit_title=commit_msg.strip()
                 last_commit_desc=description
 
             if description == "":
