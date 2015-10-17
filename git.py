@@ -88,7 +88,7 @@ while True:
                 commit_msg="Debuging"
             if commit_msg=="p":
                 commit_msg="Performance Improvement"
-             if commit_msg=="q":
+            if commit_msg=="q":
                 commit_msg=last_commit_title
                 description=last_commit_desc
                 new_msg=False
