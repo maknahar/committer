@@ -74,7 +74,7 @@ while True:
         print "\nFILE NAME:",mfile
         print "\nCHANGES: New File\n"
         os.system("git diff "+mfile)
-        commit_msg = raw_input("\nCommit Title\n a: Added new feature\n b: Bug Fix\n c: Build Issue\n d: Debuging\n i: ignore this file\n p: Performance Improvement\n r: Reorganized the code\n q: same as last file\nEnter Commit Title: ")
+        commit_msg = raw_input("\nCommit Title\n a: Added new feature\n b: Bug Fix\n c: Build Issue\n d: Debuging\n i: ignore this file\n p: Performance Improvement\n q: same as last file\n r: Reorganized the code\n t: Added test case\nEnter Commit Title: ")
 
         if commit_msg!="i":
             push = True
@@ -88,12 +88,15 @@ while True:
                 commit_msg="Debuging"
             if commit_msg=="p":
                 commit_msg="Performance Improvement"
-            if commit_msg=="r":
-                commit_msg="Rorganized the code"
-            if commit_msg=="q":
+             if commit_msg=="q":
                 commit_msg=last_commit_title
                 description=last_commit_desc
                 new_msg=False
+            if commit_msg=="r":
+                commit_msg="Rorganized the code"
+            if commit_msg=="t":
+                commit_msg="Added test case"
+
 
             if new_msg:
                 description = raw_input("\nEnter Commit Description(Optional):")
