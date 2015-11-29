@@ -98,7 +98,7 @@ if push==True:
         os.system("git push")
 
 
-print bcolors.BOLD+"Git Status Now:\n"+bcolors.ENDC
+print bcolors.BOLD+"\nGit Status Now:"+bcolors.ENDC
 os.system("git status")
 
 p.kill()
