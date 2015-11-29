@@ -44,6 +44,7 @@ while True:
 
     #sys.stdout.write(line)
     sys.stdout.flush()
+    
    
     if 'modified:' in line or 'new file:' in line or 'renamed:' in line or 'deleted:' in line:
         
@@ -93,7 +94,6 @@ while True:
             else:
                 os.system("git commit "+mfile+ " -m \""+commit_msg+"\""+ " -m \""+description+"\"")
 
-    os.system("clear")
     if line == '':
         break
 
