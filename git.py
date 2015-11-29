@@ -123,7 +123,7 @@ print bcolors.BOLD+"Git Status Now:\n"+bcolors.ENDC
 os.system("git status")
 
 if push==True:
-    confirm = raw_input('\n\nDo you want to Push to remote?(Y/N)')
+    confirm = raw_input('\n\nEnter Y to push to remote: ')
     if confirm.strip()=='Y' or confirm.strip()=='y':
         os.system("git push")
 
