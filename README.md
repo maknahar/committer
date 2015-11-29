@@ -66,4 +66,12 @@ nothing to commit, working directory clean
 
 Enter Y to push to remote: y
 
+Counting objects: 3, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 615 bytes | 0 bytes/s, done.
+Total 3 (delta 2), reused 0 (delta 0)
+To git@github.com:maknahar/gitCommitHelper.git
+   59afe9b..1ac3501  master -> master
+
 ```
