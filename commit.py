@@ -92,12 +92,13 @@ if push==True:
     print bcolors.OKBLUE+ "Finished Committing all new and modified Files."+bcolors.ENDC
     print bcolors.OKGREEN+"☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ \n"+bcolors.ENDC
 
-print bcolors.BOLD+"Git Status Now:\n"+bcolors.ENDC
-os.system("git status")
-
 if push==True:
     confirm = raw_input('\n\nEnter Y to push to remote: ')
     if confirm.strip()=='Y' or confirm.strip()=='y':
         os.system("git push")
+
+
+print bcolors.BOLD+"Git Status Now:\n"+bcolors.ENDC
+os.system("git status")
 
 p.kill()
