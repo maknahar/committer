@@ -31,13 +31,25 @@ while True:
 	#if 'Your branch is up-to-date with' in line:
 	
 	
-    if 'modified:' in line or 'new file:' in line or 'renamed::' in line:
-        mfile= line.split("modified:   ",1)[1].strip("\n")
-        print bcolors.BOLD+bcolors.OKBLUE+ "\nFILE NAME:",mfile+bcolors.ENDC
+    if 'modified:' in line or 'new file:' in line or 'renamed:' in line or 'deleted:' in line:
+        
+        print bcolors.BOLD+bcolors.OKBLUE+line.strip()+bcolors.ENDC
+        mfile=''
         
         if 'modified:' in line:
+            mfile= line.split("modified:   ",1)[1].strip("\n")
             os.system("git diff "+mfile)
-
+        
+        if 'new file:' in line:
+            mfile= line.split("new file:   ",1)[1].strip("\n")
+            
+        if 'renamed:' in line:
+            mfile= line.split("renamed:   ",1)[1].strip("\n")
+            
+        if 'deleted:' in line:
+            mfile= line.split("deleted:   ",1)[1].strip("\n")   
+            
+                 
         commit_msg = raw_input("\nCommit Title\n a: Added new feature\n b: Bug Fix\n c: Build Issue\n d: Debuging\n i: ignore this file\n p: Performance Improvement\n q: same as last file\n r: Reorganized the code\n t: Added test case\nEnter Commit Title: ")
         
         if commit_msg.strip()!="i" and commit_msg.strip()!='':
