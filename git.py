@@ -124,7 +124,7 @@ os.system("git status")
 
 if push==True:
     confirm = raw_input('\n\nDo you want to Push to remote?(Y/N)')
-    if confirm=='Y' or confirm=='y':
+    if confirm.strip()=='Y' or confirm.strip()=='y':
         os.system("git push")
 
 p.kill()
