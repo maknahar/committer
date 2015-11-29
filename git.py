@@ -28,15 +28,18 @@ while True:
 
     #sys.stdout.write(line)
     sys.stdout.flush()
+	#if 'Your branch is up-to-date with' in line:
+	
+	
     if 'modified:' in line:
         mfile= line.split("modified:   ",1)[1].strip("\n")
-        print "\nFILE NAME:",mfile
-        print "\n\nCHANGES: \n"
+        print bcolors.BOLD+bcolors.OKBLUE+ "\nFILE NAME:",mfile+bcolors.ENDC
+        
         os.system("git diff "+mfile)
 
         commit_msg = raw_input("\nCommit Title\n a: Added new feature\n b: Bug Fix\n c: Build Issue\n d: Debuging\n i: ignore this file\n p: Performance Improvement\n q: same as last file\n r: Reorganized the code\n t: Added test case\nEnter Commit Title: ")
-
-        if commit_msg!="i":
+        
+        if commit_msg.strip()!="i" and commit_msg.strip()!='':
             push = True
             if commit_msg.strip()=="a":
                 commit_msg="Added new feature"
@@ -76,7 +79,7 @@ while True:
         os.system("git diff "+mfile)
         commit_msg = raw_input("\nCommit Title\n a: Added new feature\n b: Bug Fix\n c: Build Issue\n d: Debuging\n i: ignore this file\n p: Performance Improvement\n q: same as last file\n r: Reorganized the code\n t: Added test case\nEnter Commit Title: ")
 
-        if commit_msg.strip()!="i":
+        if commit_msg.strip()!="i" and commit_msg.strip()!='':
             push = True
             if commit_msg.strip()=="a":
                 commit_msg="Added new feature"
