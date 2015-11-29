@@ -32,7 +32,9 @@ while True:
     
     if line=='':
         q.kill()
-        raw_input("Please Enter to countinue.")
+        confirm=raw_input("Please Enter to countinue. Enter q to quit: ")
+        if confirm.strip()=='q' or confirm.strip()=='Q':
+            quit()
         break
 
 while True:
@@ -42,9 +44,7 @@ while True:
 
     #sys.stdout.write(line)
     sys.stdout.flush()
-	#if 'Your branch is up-to-date with' in line:
-	
-	
+   
     if 'modified:' in line or 'new file:' in line or 'renamed:' in line or 'deleted:' in line:
         
         print bcolors.BOLD+bcolors.OKBLUE+line.strip()+bcolors.ENDC
