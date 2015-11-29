@@ -49,7 +49,6 @@ index 1403ec0..f8ed92f 100644
  
  
  #Example:
- ```
 -$ git.py
 +$ commit.py
  
