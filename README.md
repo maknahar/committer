@@ -1,16 +1,23 @@
-# gitCommitHelper
-GitCommitHelper helps programmer commit into git with minimum typing.
+# Git Commit Helper
+Git Commit Helper helps programmer commit into git with minimum typing. It automate all the work need to be done for commiting.
+
+# Features
+1. Captures modified, renamed, new and deleted file automatically for commit.
+2. Let user commit file one by one with hastle of copy and pasting file path.
+3. Shows git diff output for each file before commiting.
+4. Let user skip some file from commiting
+
 
 # Usase
-1. chmod 777 git.py
-2. Copy git.py to PATH Location (ex - /usr/local/bin/)
-3. Go inside the project git directory.
-4. Run git.py from any git repository to commit.
+1. Clone this repository.
+2. Change mode of file commit.py (chmod 777 commit.py)
+3. copy commit.py to PATH. (cp commit.py /usr/local/bin/)
+4. run commit.py from any git repository to start commiting.
 
 
 #Example:
 ```
-$ git.py
+$ commit.py
 
 $FILE NAME: ../../global/groupmanager/groupManager.go
 
