@@ -22,16 +22,21 @@ push = False
 last_commit_title = ""
 last_commit_desc = ""
 description=""
+somethingToCommit=False 
 
 print bcolors.BOLD+"List Of Files Needs commiting:"+bcolors.ENDC
 while True:
     line = q.stdout.readline()
-    sys.stdout.flush()  
+    sys.stdout.flush()
     if 'modified:' in line or 'new file:' in line or 'renamed:' in line or 'deleted:' in line:
         print bcolors.BOLD+bcolors.OKBLUE+line.strip()+bcolors.ENDC
-    
+        somethingToCommit=True
+        
     if line=='':
         q.kill()
+        if somethingToCommit==False:
+            print "Nothing to commit"
+            quit()
         confirm=raw_input("Please Enter to countinue. Enter q to quit: ")
         if confirm.strip()=='q' or confirm.strip()=='Q':
             quit()
