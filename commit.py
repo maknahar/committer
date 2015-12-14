@@ -35,10 +35,11 @@ while True:
     if line=='':
         q.kill()
         if somethingToCommit==False:
-            print "Nothing to commit"
+            print "Nothing to commit. Quiting..."
             quit()
         confirm=raw_input("Please Enter to countinue.(q to quit): ")
         if confirm.strip()=='q' or confirm.strip()=='Q':
+            print "Quiting..."
             quit()
         break
 
@@ -97,6 +98,7 @@ while True:
                 commit_msg="Renamed file: "+mfile
 
             if commit_msg.strip()=="q":
+                print "Quiting..."
                 quit()
 
             if new_msg:
