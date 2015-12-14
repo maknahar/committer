@@ -22,7 +22,7 @@ push = False
 last_commit_title = ""
 last_commit_desc = ""
 description=""
-somethingToCommit=False 
+somethingToCommit=False
 
 print bcolors.BOLD+"List Of Files Needs commiting:"+bcolors.ENDC
 while True:
@@ -31,7 +31,7 @@ while True:
     if 'modified:' in line or 'new file:' in line or 'renamed:' in line or 'deleted:' in line:
         print bcolors.BOLD+bcolors.OKBLUE+line.strip()+bcolors.ENDC
         somethingToCommit=True
-        
+
     if line=='':
         q.kill()
         if somethingToCommit==False:
@@ -43,39 +43,42 @@ while True:
         break
 
 while True:
-    
+
     new_msg=True
     line = p.stdout.readline()
 
     #sys.stdout.write(line)
     sys.stdout.flush()
-    
-   
+
+
     if 'modified:' in line or 'new file:' in line or 'renamed:' in line or 'deleted:' in line:
-        
+
         print bcolors.BOLD+bcolors.OKBLUE+line.strip()+bcolors.ENDC
         mfile=''
-        
+
         if 'modified:' in line:
             mfile= line.split("modified:   ",1)[1].strip("\n")
             os.system("git diff "+mfile)
-        
+
         if 'new file:' in line:
             mfile= line.split("new file:   ",1)[1].strip("\n")
-            
+
         if 'renamed:' in line:
             mfile= line.split("renamed:   ",1)[1].strip("\n")
-            
+
         if 'deleted:' in line:
-            mfile= line.split("deleted:   ",1)[1].strip("\n")   
-            
-                 
-        commit_msg = raw_input("\nCommit Shortcuts\n a: Added new File <file name>\n d: Deleted file <file name>\n i: ignore this file from commit\n p: Performance Optimization\n q: Quit Commiting\n r: Renamed file <file name>\n s: Same as last file\nEnter Commit Title: ")
-        
+            mfile= line.split("deleted:   ",1)[1].strip("\n")
+
+
+        commit_msg = raw_input("\nCommit Shortcuts\n a: Added new File <file name>\n c: Checkout this file("+bcolors.WARNING+"This Will revert all your changes to this file"+bcolors.ENDC+") d: Deleted file <file name>\n i: ignore this file from commit\n p: Performance Optimization\n q: Quit Commiting\n r: Renamed file <file name>\n s: Same as last file\nEnter Commit Title: ")
+
         if commit_msg.strip()!="i" and commit_msg.strip()!='':
-            push = True
+
             if commit_msg.strip()=="a":
                 commit_msg="Added new File: "+ mfile
+            if commit_msg.strip()=="c":
+                os.system("git checkout "+mfile)
+                new_msg=False
             if commit_msg.strip()=="d":
                 commit_msg="Deleted File: "+ mfile
             if commit_msg.strip()=="p":
@@ -90,6 +93,7 @@ while True:
                 quit()
 
             if new_msg:
+                push = True
                 description = raw_input("\nEnter Commit Description(Optional):")
                 last_commit_title=commit_msg.strip()
                 last_commit_desc=description
