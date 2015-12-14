@@ -37,7 +37,7 @@ while True:
         if somethingToCommit==False:
             print "Nothing to commit"
             quit()
-        confirm=raw_input("Please Enter to countinue. Enter q to quit: ")
+        confirm=raw_input("Please Enter to countinue.(q to quit): ")
         if confirm.strip()=='q' or confirm.strip()=='Q':
             quit()
         break
@@ -70,25 +70,32 @@ while True:
             mfile= line.split("deleted:   ",1)[1].strip("\n")
 
 
-        commit_msg = raw_input("\nCommit Shortcuts\n a: Added new File <file name>\n c: Checkout this file("+bcolors.WARNING+"This Will revert all your changes to this file"+bcolors.ENDC+") d: Deleted file <file name>\n i: ignore this file from commit\n p: Performance Optimization\n q: Quit Commiting\n r: Renamed file <file name>\n s: Same as last file\nEnter Commit Title: ")
+        commit_msg = raw_input("\nShortcuts\n a: Added new File <file name>\n "+bcolors.WARNING+"c: Checkout this file"+bcolors.ENDC+"\n d: Deleted file <file name>\n i: ignore this file from commit\n p: Performance Optimization\n q: Quit Commiting\n r: Renamed file <file name>\n s: Same as last file\nEnter Commit Title: ")
 
         if commit_msg.strip()!="i" and commit_msg.strip()!='':
 
             if commit_msg.strip()=="a":
                 commit_msg="Added new File: "+ mfile
+
             if commit_msg.strip()=="c":
                 os.system("git checkout "+mfile)
                 new_msg=False
+                continue
+
             if commit_msg.strip()=="d":
                 commit_msg="Deleted File: "+ mfile
+
             if commit_msg.strip()=="p":
                 commit_msg="Performance Optimization"
+
             if commit_msg.strip()=="s":
                 commit_msg=last_commit_title
                 description=last_commit_desc
                 new_msg=False
+
             if commit_msg.strip()=="r":
                 commit_msg="Renamed file: "+mfile
+
             if commit_msg.strip()=="q":
                 quit()
 
