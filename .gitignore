@@ -55,6 +55,4 @@ docs/_build/
 
 # PyBuilder
 target/
-.idea/Git-Commit-Helper.iml
-.idea/modules.xml
-.idea/workspace.xml
+.idea/
