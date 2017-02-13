@@ -12,9 +12,10 @@ Git Commit Helper helps programmer commit into git with minimum typing. It autom
 
 # Usage
 
-```git clone git@github.com:maknahar/git-commit-helper.git;
-   cd git-commit-helper; chmod 777 commit.py; 
-   cp commit.py /usr/local/bin/;
+```
+  git clone git@github.com:maknahar/git-commit-helper.git;
+  cd git-commit-helper; chmod 777 commit.py; 
+  cp commit.py /usr/local/bin/
 ```
 
 1. Clone this repository.
