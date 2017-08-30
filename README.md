@@ -13,8 +13,8 @@ Git Commit Helper helps programmer commit into git with minimum typing. It autom
 # Usage
 
 ```
-  git clone git@github.com:maknahar/git-commit-helper.git;
-  cd git-commit-helper; chmod 777 commit.py; 
+  git clone git@github.com:maknahar/committer.git;
+  cd committer; chmod 777 commit.py; 
   cp commit.py /usr/local/bin/
 ```
 
@@ -38,8 +38,8 @@ index 93ed08f..65d58bc 100644
  
  
  # Usase
--1. Clone this repository.(__git clone git@github.com:maknahar/gitCommitHelper.git__)
-+1. Clone this repository.(__git clone git@github.com:maknahar/Git-Commit-Helper.git__)
+-1. Clone this repository.(__git clone git@github.com:maknahar/committer.git__)
++1. Clone this repository.(__git clone git@github.com:maknahar/committer.git__)
 
 Commit Shortcuts
  a: Added new File <file name>
@@ -68,7 +68,7 @@ Compressing objects: 100% (3/3), done.
 Writing objects: 100% (3/3), 395 bytes | 0 bytes/s, done.
 Total 3 (delta 2), reused 0 (delta 0)
 remote: This repository moved. Please use the new location:
-remote:   https://github.com/maknahar/Git-Commit-Helper.git
+remote:   https://github.com/maknahar/committer.git
 To git@github.com:maknahar/gitCommitHelper.git
    8225141..43f0662  master -> master
 
