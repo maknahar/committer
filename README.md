@@ -10,12 +10,12 @@ Git Commit Helper helps programmer commit into git with minimum typing. It autom
 6. Provide commit short cut that let you commit with typing of one character.
 
 
-# Usage
+# Installation
 
 ```
   git clone git@github.com:maknahar/committer.git;
   cd committer; chmod 777 commit.py; 
-  cp commit.py /usr/local/bin/
+  cp commit.py /usr/local/bin/commit
 ```
 
 1. Clone this repository.
@@ -23,11 +23,16 @@ Git Commit Helper helps programmer commit into git with minimum typing. It autom
 3. copy commit.py to PATH. 
 4. run commit.py from any git repository to start committing.
 
+# Usage
+
 #Example:
 ```
+$ commit
+
 List Of Files Needs commiting:
 modified:   README.md
-Please Enter to countinue. Enter q to quit: 
+
+Please Enter to countinue. Enter q to quit:
 
 modified:   README.md
 diff --git a/README.md b/README.md
