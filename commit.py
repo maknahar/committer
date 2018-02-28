@@ -2,9 +2,9 @@
 # -*- coding: utf-8 -*-
 
 import os
-import signal
 import subprocess
 import sys
+
 
 class bcolors:
     HEADER = '\033[95m'
@@ -16,115 +16,114 @@ class bcolors:
     BOLD = '\033[1m'
     UNDERLINE = '\033[4m'
 
+
 p = subprocess.Popen(['git', 'status'], stdout=subprocess.PIPE)
 q = subprocess.Popen(['git', 'status'], stdout=subprocess.PIPE)
 push = False
 last_commit_title = ""
 last_commit_desc = ""
-description=""
-somethingToCommit=False
+description = ""
+somethingToCommit = False
 
-print bcolors.BOLD+"List Of Files Needs commiting:"+bcolors.ENDC
+print bcolors.BOLD + "\nList Of Files Needs committing:" + bcolors.ENDC
 while True:
     line = q.stdout.readline()
     sys.stdout.flush()
     if 'modified:' in line or 'new file:' in line or 'renamed:' in line or 'deleted:' in line:
-        print bcolors.BOLD+bcolors.OKBLUE+line.strip()+bcolors.ENDC
-        somethingToCommit=True
+        print bcolors.BOLD + bcolors.OKBLUE + line.strip() + bcolors.ENDC
+        somethingToCommit = True
 
-    if line=='':
+    if line == '':
         q.kill()
-        if somethingToCommit==False:
+        if somethingToCommit == False:
             print "Nothing to commit. Quiting..."
             quit()
-        confirm=raw_input("Please Enter to countinue.(q to quit): ")
-        if confirm.strip()=='q' or confirm.strip()=='Q':
+        confirm = raw_input("\nPlease Enter to countinue.(q to quit):\t")
+        if confirm.strip() == 'q' or confirm.strip() == 'Q':
             print "Quiting..."
             quit()
         break
 
 while True:
 
-    new_msg=True
+    new_msg = True
     line = p.stdout.readline()
 
-    #sys.stdout.write(line)
+    # sys.stdout.write(line)
     sys.stdout.flush()
-
 
     if 'modified:' in line or 'new file:' in line or 'renamed:' in line or 'deleted:' in line:
 
-        print bcolors.BOLD+bcolors.OKBLUE+line.strip()+bcolors.ENDC
-        mfile=''
+        print bcolors.BOLD + bcolors.OKBLUE + line.strip() + bcolors.ENDC
+        mfile = ''
 
         if 'modified:' in line:
-            mfile= line.split("modified:   ",1)[1].strip("\n")
-            os.system("git diff "+mfile)
+            mfile = line.split("modified:   ", 1)[1].strip("\n")
+            os.system("git diff " + mfile)
 
         if 'new file:' in line:
-            mfile= line.split("new file:   ",1)[1].strip("\n")
+            mfile = line.split("new file:   ", 1)[1].strip("\n")
 
         if 'renamed:' in line:
-            mfile= line.split("renamed:   ",1)[1].strip("\n")
+            mfile = line.split("renamed:   ", 1)[1].strip("\n")
 
         if 'deleted:' in line:
-            mfile= line.split("deleted:   ",1)[1].strip("\n")
+            mfile = line.split("deleted:   ", 1)[1].strip("\n")
 
+        commit_msg = raw_input(
+            "\nShortcuts\n a: Added new File <file name>\n " + bcolors.WARNING + "c: Checkout this file" + bcolors.ENDC + "\n d: Deleted file <file name>\n i: ignore this file from commit\n p: Performance Optimization\n q: Quit Commiting\n r: Renamed file <file name>\n s: Same as last file\nEnter Commit Title: ")
 
-        commit_msg = raw_input("\nShortcuts\n a: Added new File <file name>\n "+bcolors.WARNING+"c: Checkout this file"+bcolors.ENDC+"\n d: Deleted file <file name>\n i: ignore this file from commit\n p: Performance Optimization\n q: Quit Commiting\n r: Renamed file <file name>\n s: Same as last file\nEnter Commit Title: ")
+        if commit_msg.strip() != "i" and commit_msg.strip() != '':
 
-        if commit_msg.strip()!="i" and commit_msg.strip()!='':
+            if commit_msg.strip() == "a":
+                commit_msg = "Added new File: " + mfile
 
-            if commit_msg.strip()=="a":
-                commit_msg="Added new File: "+ mfile
-
-            if commit_msg.strip()=="c":
-                os.system("git checkout "+mfile)
-                new_msg=False
+            if commit_msg.strip() == "c":
+                os.system("git checkout " + mfile)
+                new_msg = False
                 continue
 
-            if commit_msg.strip()=="d":
-                commit_msg="Deleted File: "+ mfile
+            if commit_msg.strip() == "d":
+                commit_msg = "Deleted File: " + mfile
 
-            if commit_msg.strip()=="p":
-                commit_msg="Performance Optimization"
+            if commit_msg.strip() == "p":
+                commit_msg = "Performance Optimization"
 
-            if commit_msg.strip()=="s":
-                commit_msg=last_commit_title
-                description=last_commit_desc
-                new_msg=False
+            if commit_msg.strip() == "s":
+                commit_msg = last_commit_title
+                description = last_commit_desc
+                new_msg = False
 
-            if commit_msg.strip()=="r":
-                commit_msg="Renamed file: "+mfile
+            if commit_msg.strip() == "r":
+                commit_msg = "Renamed file: " + mfile
 
-            if commit_msg.strip()=="q":
+            if commit_msg.strip() == "q":
                 print "Quiting..."
                 quit()
 
             if new_msg:
                 push = True
                 description = raw_input("\nEnter Commit Description(Optional):")
-                last_commit_title=commit_msg.strip()
-                last_commit_desc=description
+                last_commit_title = commit_msg.strip()
+                last_commit_desc = description
 
             if description == "":
-                os.system("git commit "+mfile+ " -m \""+commit_msg+"\"")
+                os.system("git commit " + mfile + " -m \"" + commit_msg + "\"")
             else:
-                os.system("git commit "+mfile+ " -m \""+commit_msg+"\""+ " -m \""+description+"\"")
+                os.system("git commit " + mfile + " -m \"" + commit_msg + "\"" + " -m \"" + description + "\"")
 
     if line == '':
         break
 
-if push==True:
-    print bcolors.OKGREEN+"\n☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺"+bcolors.ENDC
-    print bcolors.OKBLUE+ "Finished Committing all Files."+bcolors.ENDC
-    print bcolors.OKGREEN+"☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ \n"+bcolors.ENDC
+if push == True:
+    print bcolors.OKGREEN + "\n☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺" + bcolors.ENDC
+    print bcolors.OKBLUE + "Finished Committing all Files." + bcolors.ENDC
+    print bcolors.OKGREEN + "☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ \n" + bcolors.ENDC
     confirm = raw_input('\n\nEnter Y to push to remote: ')
-    if confirm.strip()=='Y' or confirm.strip()=='y':
+    if confirm.strip() == 'Y' or confirm.strip() == 'y':
         os.system("git push")
 
-
-print bcolors.BOLD+"\nGit Status Now:"+bcolors.ENDC
+print bcolors.BOLD + "\nGit Status Now:" + bcolors.ENDC
 os.system("git status")
 
 p.kill()
