@@ -28,7 +28,7 @@ somethingToCommit = False
 print BColors.BOLD + "\nList Of Files Needs committing:" + BColors.ENDC
 while True:
     line = q.stdout.readline()
-    if 'modified:' in line or 'new file:' in line or 'renamed:' in line or 'deleted:' in line:
+    if 'modified:' in line or 'new file:' in line or 'renamed:' in line or 'deleted:' in line or '.orig' in line:
         print BColors.BOLD + BColors.OKBLUE + line.strip() + BColors.ENDC
         somethingToCommit = True
 
@@ -48,7 +48,7 @@ while True:
     new_msg = True
     line = p.stdout.readline()
 
-    sys.stdout.write(line)
+    # sys.stdout.write(line)
     sys.stdout.flush()
 
     if ".orig" in line:
