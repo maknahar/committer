@@ -6,7 +6,7 @@ import subprocess
 import sys
 
 
-class bcolors:
+class BColors:
     HEADER = '\033[95m'
     OKBLUE = '\033[94m'
     OKGREEN = '\033[92m'
@@ -25,20 +25,20 @@ last_commit_desc = ""
 description = ""
 somethingToCommit = False
 
-print bcolors.BOLD + "\nList Of Files Needs committing:" + bcolors.ENDC
+print BColors.BOLD + "\nList Of Files Needs committing:" + BColors.ENDC
 while True:
     line = q.stdout.readline()
     sys.stdout.flush()
     if 'modified:' in line or 'new file:' in line or 'renamed:' in line or 'deleted:' in line:
-        print bcolors.BOLD + bcolors.OKBLUE + line.strip() + bcolors.ENDC
+        print BColors.BOLD + BColors.OKBLUE + line.strip() + BColors.ENDC
         somethingToCommit = True
 
     if line == '':
         q.kill()
-        if somethingToCommit == False:
+        if somethingToCommit is False:
             print "Nothing to commit. Quiting..."
             quit()
-        confirm = raw_input("\nPlease Enter to countinue.(q to quit):\t")
+        confirm = raw_input("\nPlease Enter to continue.(q to quit):\t")
         if confirm.strip() == 'q' or confirm.strip() == 'Q':
             print "Quiting..."
             quit()
@@ -54,7 +54,7 @@ while True:
 
     if 'modified:' in line or 'new file:' in line or 'renamed:' in line or 'deleted:' in line:
 
-        print bcolors.BOLD + bcolors.OKBLUE + line.strip() + bcolors.ENDC
+        print BColors.BOLD + BColors.OKBLUE + line.strip() + BColors.ENDC
         mfile = ''
 
         if 'modified:' in line:
@@ -71,7 +71,15 @@ while True:
             mfile = line.split("deleted:   ", 1)[1].strip("\n")
 
         commit_msg = raw_input(
-            "\nShortcuts\n a: Added new File <file name>\n " + bcolors.WARNING + "c: Checkout this file" + bcolors.ENDC + "\n d: Deleted file <file name>\n i: ignore this file from commit\n p: Performance Optimization\n q: Quit Commiting\n r: Renamed file <file name>\n s: Same as last file\nEnter Commit Title: ")
+            "\nShortcuts\n a: Added new File <file name>\n " +
+            BColors.WARNING + "c: Checkout this file" + BColors.ENDC +
+            "\n d: Deleted file <file name>\n "
+            "i: ignore this file from commit\n "
+            "p: Performance Optimization\n "
+            "q: Quit Committing\n "
+            "r: Renamed file <file name>\n "
+            "s: Same as last file\n"
+            "Enter Commit Title: ")
 
         if commit_msg.strip() != "i" and commit_msg.strip() != '':
 
@@ -112,18 +120,21 @@ while True:
             else:
                 os.system("git commit " + mfile + " -m \"" + commit_msg + "\"" + " -m \"" + description + "\"")
 
+    if "orig" in line:
+        print BColors.BOLD + BColors.OKBLUE + line.strip() + BColors.ENDC
+
     if line == '':
         break
 
-if push == True:
-    print bcolors.OKGREEN + "\n☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺" + bcolors.ENDC
-    print bcolors.OKBLUE + "Finished Committing all Files." + bcolors.ENDC
-    print bcolors.OKGREEN + "☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ \n" + bcolors.ENDC
+if push is True:
+    print BColors.OKGREEN + "\n☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺" + BColors.ENDC
+    print BColors.OKBLUE + "Finished Committing all Files." + BColors.ENDC
+    print BColors.OKGREEN + "☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ \n" + BColors.ENDC
     confirm = raw_input('\n\nEnter Y to push to remote: ')
     if confirm.strip() == 'Y' or confirm.strip() == 'y':
         os.system("git push")
 
-print bcolors.BOLD + "\nGit Status Now:" + bcolors.ENDC
+print BColors.BOLD + "\nGit Status Now:" + BColors.ENDC
 os.system("git status")
 
 p.kill()
