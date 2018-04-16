@@ -1,13 +1,15 @@
 # Git Commit Helper
-Git Commit Helper helps programmer commit into git with minimum typing. It automate all the work need to be done for commiting.
+Git Commit Helper helps programmer commit into git with minimum typing. 
+It automate all the work need to be done for committing.
 
 # Features
-1.  No need to type command repeatedly like git commit <file name> -m "msg". Just type msg and file will be commit automatically.
+1. Focus on commit message than git command.
 2. Captures modified, renamed, new and deleted file automatically for commit.
-3. Let user commit files one by one without any hastle of copy and pasting file path.
-4. Shows git diff output for each file before commiting.
-5. Let user skip some file from commiting
+3. Let user commit files one by one without any hassle of copy and pasting file path.
+4. Shows git diff output for each file before committing.
+5. Let user skip some file from committing
 6. Provide commit short cut that let you commit with typing of one character.
+7. Remove all residual files (`.orig`) after merge conflicts are resolved.
 
 
 # Installation
