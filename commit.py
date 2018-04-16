@@ -28,7 +28,6 @@ somethingToCommit = False
 print BColors.BOLD + "\nList Of Files Needs committing:" + BColors.ENDC
 while True:
     line = q.stdout.readline()
-    sys.stdout.flush()
     if 'modified:' in line or 'new file:' in line or 'renamed:' in line or 'deleted:' in line:
         print BColors.BOLD + BColors.OKBLUE + line.strip() + BColors.ENDC
         somethingToCommit = True
@@ -49,8 +48,16 @@ while True:
     new_msg = True
     line = p.stdout.readline()
 
-    # sys.stdout.write(line)
+    sys.stdout.write(line)
     sys.stdout.flush()
+
+    if ".orig" in line:
+        inp = raw_input("Merging process residual files found: "
+                        + BColors.BOLD + BColors.OKBLUE + line.strip() + BColors.ENDC +
+                        "\nDo you want to delete it? Y/N: ")
+        if inp.strip() == "y" or inp.strip() == "Y":
+            os.system("rm " + line.strip())
+            break
 
     if 'modified:' in line or 'new file:' in line or 'renamed:' in line or 'deleted:' in line:
 
@@ -119,9 +126,6 @@ while True:
                 os.system("git commit " + mfile + " -m \"" + commit_msg + "\"")
             else:
                 os.system("git commit " + mfile + " -m \"" + commit_msg + "\"" + " -m \"" + description + "\"")
-
-    if "orig" in line:
-        print BColors.BOLD + BColors.OKBLUE + line.strip() + BColors.ENDC
 
     if line == '':
         break
