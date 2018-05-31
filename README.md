@@ -9,21 +9,21 @@ It automate all the work need to be done for committing.
 4. Shows git diff output for each file before committing.
 5. Let user skip some file from committing
 6. Provide commit short cut that let you commit with typing of one character.
-7. Remove all residual files (`.orig`) after merge conflicts are resolved.
+7. **Remove all residual files (e.g. `.orig`) after merge conflicts are resolved.**
 
 
 # Installation
+
+1. Clone this repository.
+2. Change mode of file commit.py 
+3. copy commit.py to PATH. 
+4. run commit.py from any git repository to start committing.
 
 ```
   git clone git@github.com:maknahar/committer.git;
   cd committer; chmod 777 commit.py; 
   cp commit.py /usr/local/bin/commit
 ```
-
-1. Clone this repository.
-2. Change mode of file commit.py 
-3. copy commit.py to PATH. 
-4. run commit.py from any git repository to start committing.
 
 # Usage
 
