@@ -54,10 +54,10 @@ while True:
     if ".orig" in line:
         inp = raw_input("Merging process residual files found: "
                         + BColors.BOLD + BColors.OKBLUE + line.strip() + BColors.ENDC +
-                        "\nDo you want to delete it? Y/N: ")
-        if inp.strip() == "y" or inp.strip() == "Y":
+                        "\nDo you want to delete it? Press N to NOT DELETE it: ")
+        if inp.strip() != "n" or inp.strip() != "N":
             os.system("rm " + line.strip())
-            break
+            continue
 
     if 'modified:' in line or 'new file:' in line or 'renamed:' in line or 'deleted:' in line:
 
