@@ -6,7 +6,7 @@
 
 
 ### Stakeholders affected by this changes
-- [ ] [Distributer](Distributer)
+- [ ] [Distributer](#Distributer)
 - [ ] Partners
 - [ ] Exbitors
 - [ ] Admin
