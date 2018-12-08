@@ -9,13 +9,15 @@ assignees: ''
 
 ## Business Need (the why)
 
-## Affected Portals
+## Affected functions
 - [ ] Distributer
 - [ ] QW Admin
 - [ ] Partners
 - [ ] Partner Admin
 - [ ] Cinemas
 - [ ] Cinemas Admin
+- [ ] Reports
+- [ ] Emails
 
 ## Pre-Development Checklist
 - [ ] UI/UX is ready
@@ -35,8 +37,6 @@ A high-level description of a deliverable that will be decomposed into user stor
 ### UX/UI Details and/or mockups
 If UI change, a mockup or description of what to change, attach image/file.
 
-### Change in email
-
 
 ## QW Admin
 
@@ -47,10 +47,6 @@ A high-level description of a deliverable that will be decomposed into user stor
 
 ### UX/UI Details and/or mockups
 If UI change, a mockup or description of what to change, attach image/file.
-
-### Change in email
-
-### Change in reports
 
 
 ## Partners
@@ -63,8 +59,6 @@ A high-level description of a deliverable that will be decomposed into user stor
 ### UX/UI Details and/or mockups
 If UI change, a mockup or description of what to change, attach image/file.
 
-### Change in email
-
 
 ## Partner Admin
 
@@ -76,7 +70,6 @@ A high-level description of a deliverable that will be decomposed into user stor
 ### UX/UI Details and/or mockups
 If UI change, a mockup or description of what to change, attach image/file.
 
-### Change in email
 
 ## Cinemas
 
@@ -88,7 +81,6 @@ A high-level description of a deliverable that will be decomposed into user stor
 ### UX/UI Details and/or mockups:
 If UI change, a mockup or description of what to change, attach image/file.
 
-### Change in email
 
 ## Cinemas Admin
 
@@ -100,10 +92,18 @@ A high-level description of a deliverable that will be decomposed into user stor
 ### UX/UI Details and/or mockups
 If UI change, a mockup or description of what to change, attach image/file.
 
-### Change in email
 
-### Change in reports
+## Reports
+A high-level description of how reports are affected by this feature.
 
+### List of reports affected
+- [ ] A list if reports with necessary details like column name to being add, remove and modify
+
+## Emails
+A high-level description of how emails are affected by this feature.
+
+### List of reports affected
+- [ ] A list if emails with necessary details when to send the emails, what content is available
 
 ## In-Development Checklist
 - [ ] Developement complete
