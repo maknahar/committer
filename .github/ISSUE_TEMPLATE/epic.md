@@ -102,7 +102,7 @@ A high-level description of how reports are affected by this feature.
 ## Emails
 A high-level description of how emails are affected by this feature.
 
-### List of reports affected
+### List of emails affected
 - [ ] A list if emails with necessary details when to send the emails, what content is available
 
 ## In-Development Checklist
