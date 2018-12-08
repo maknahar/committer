@@ -30,7 +30,7 @@ assignees: ''
 A high-level description of a deliverable that will be decomposed into user stories.
 
 ### List of UI pages where change is required
-A list of UI link from staging will suffice
+- [ ] A list of UI link from staging with short description will suffice
 
 ### UX/UI Details and/or mockups
 If UI change, a mockup or description of what to change, attach image/file.
@@ -43,7 +43,7 @@ If UI change, a mockup or description of what to change, attach image/file.
 A high-level description of a deliverable that will be decomposed into user stories.
 
 ### List of UI pages where change is required
-A list of UI link from staging will suffice
+- [ ] A list of UI link from staging with short description will suffice
 
 ### UX/UI Details and/or mockups
 If UI change, a mockup or description of what to change, attach image/file.
@@ -58,7 +58,7 @@ If UI change, a mockup or description of what to change, attach image/file.
 A high-level description of a deliverable that will be decomposed into user stories.
 
 ### List of UI pages where change is required
-A list of UI link from staging will suffice
+- [ ] A list of UI link from staging with short description will suffice
 
 ### UX/UI Details and/or mockups
 If UI change, a mockup or description of what to change, attach image/file.
@@ -71,7 +71,7 @@ If UI change, a mockup or description of what to change, attach image/file.
 A high-level description of a deliverable that will be decomposed into user stories.
 
 ### List of UI pages where change is required
-A list of UI link from staging will suffice
+- [ ] A list of UI link from staging with short description will suffice
 
 ### UX/UI Details and/or mockups
 If UI change, a mockup or description of what to change, attach image/file.
@@ -83,7 +83,7 @@ If UI change, a mockup or description of what to change, attach image/file.
 A high-level description of a deliverable that will be decomposed into user stories.
 
 ### List of UI pages where change is required
-A list of UI link from staging will suffice
+- [ ] A list of UI link from staging with short description will suffice
 
 ### UX/UI Details and/or mockups:
 If UI change, a mockup or description of what to change, attach image/file.
@@ -95,7 +95,7 @@ If UI change, a mockup or description of what to change, attach image/file.
 A high-level description of a deliverable that will be decomposed into user stories.
 
 ### List of UI pages where change is required
-A list of UI link from staging will suffice
+- [ ] A list of UI link from staging with short description will suffice
 
 ### UX/UI Details and/or mockups
 If UI change, a mockup or description of what to change, attach image/file.
@@ -103,3 +103,17 @@ If UI change, a mockup or description of what to change, attach image/file.
 ### Change in email
 
 ### Change in reports
+
+
+## In-Development Checklist
+- [ ] Developement complete
+- [ ] Test complete
+- [ ] Automation complete
+- [ ] Ready for deploy
+
+## After-Development Checklist
+- [ ] Demo done
+- [ ] Deployment done
+- [ ] Sanity check complete
+
+
