@@ -7,7 +7,7 @@ assignees: ''
 
 ---
 
-## Business Need (the why):
+## Business Need (the why)
 
 ## Affected Portals
 - [ ] Distributer
@@ -17,9 +17,16 @@ assignees: ''
 - [ ] Cinemas
 - [ ] Cinemas Admin
 
+## Pre-Development Checklist
+- [ ] UI/UX is ready
+- [ ] Functional requirement analysis complete
+- [ ] UI/UX approved by stakeholders
+- [ ] Stories created
+- [ ] Technical analysis complete
+- [ ] Tech-task created and attached to stories
+
 ## Distributor
 
-### Description:
 A high-level description of a deliverable that will be decomposed into user stories.
 
 ### List of UI pages where change is required
@@ -33,7 +40,6 @@ If UI change, a mockup or description of what to change, attach image/file.
 
 ## QW Admin
 
-### Description:
 A high-level description of a deliverable that will be decomposed into user stories.
 
 ### List of UI pages where change is required
@@ -49,7 +55,6 @@ If UI change, a mockup or description of what to change, attach image/file.
 
 ## Partners
 
-### Description:
 A high-level description of a deliverable that will be decomposed into user stories.
 
 ### List of UI pages where change is required
@@ -63,7 +68,6 @@ If UI change, a mockup or description of what to change, attach image/file.
 
 ## Partner Admin
 
-### Description:
 A high-level description of a deliverable that will be decomposed into user stories.
 
 ### List of UI pages where change is required
@@ -76,7 +80,6 @@ If UI change, a mockup or description of what to change, attach image/file.
 
 ## Cinemas
 
-### Description:
 A high-level description of a deliverable that will be decomposed into user stories.
 
 ### List of UI pages where change is required
@@ -89,7 +92,6 @@ If UI change, a mockup or description of what to change, attach image/file.
 
 ## Cinemas Admin
 
-### Description:
 A high-level description of a deliverable that will be decomposed into user stories.
 
 ### List of UI pages where change is required
