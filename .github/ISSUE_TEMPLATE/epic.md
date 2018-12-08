@@ -7,41 +7,97 @@ assignees: ''
 
 ---
 
-# Epic name goes here
-
 ## Business Need (the why):
 
-### Assumptions
-
-
-### Stakeholders affected by this changes
-- [ ] [Distributer](#Distributer)
+## Affected Portals
+- [ ] Distributer
+- [ ] QW Admin
 - [ ] Partners
-- [ ] Exbitors
-- [ ] Admin
-- [ ] TDL Partners
+- [ ] Partner Admin
+- [ ] Cinemas
+- [ ] Cinemas Admin
 
-## Distributer
+## Distributor
 
-- [ ] This epics affect the distributor portal
+### Description:
+A high-level description of a deliverable that will be decomposed into user stories.
 
-### Discription:
-High level description of a deliverable that will be decomposed into user stories
+### List of UI pages where change is required
+A list of UI link from staging will suffice
+
+### UX/UI Details and/or mockups
+If UI change, a mockup or description of what to change, attach image/file.
+
+### Change in email
+
+
+## QW Admin
+
+### Description:
+A high-level description of a deliverable that will be decomposed into user stories.
+
+### List of UI pages where change is required
+A list of UI link from staging will suffice
+
+### UX/UI Details and/or mockups
+If UI change, a mockup or description of what to change, attach image/file.
+
+### Change in email
+
+### Change in reports
+
+
+## Partners
+
+### Description:
+A high-level description of a deliverable that will be decomposed into user stories.
+
+### List of UI pages where change is required
+A list of UI link from staging will suffice
+
+### UX/UI Details and/or mockups
+If UI change, a mockup or description of what to change, attach image/file.
+
+### Change in email
+
+
+## Partner Admin
+
+### Description:
+A high-level description of a deliverable that will be decomposed into user stories.
+
+### List of UI pages where change is required
+A list of UI link from staging will suffice
+
+### UX/UI Details and/or mockups
+If UI change, a mockup or description of what to change, attach image/file.
+
+### Change in email
+
+## Cinemas
+
+### Description:
+A high-level description of a deliverable that will be decomposed into user stories.
+
+### List of UI pages where change is required
+A list of UI link from staging will suffice
 
 ### UX/UI Details and/or mockups:
 If UI change, a mockup or description of what to change, attach image/file.
 
+### Change in email
 
-## Admin
+## Cinemas Admin
 
-### Discription:
-High level description of a deliverable that will be decomposed into user stories
+### Description:
+A high-level description of a deliverable that will be decomposed into user stories.
 
-### UX/UI Details and/or mockups:
+### List of UI pages where change is required
+A list of UI link from staging will suffice
+
+### UX/UI Details and/or mockups
 If UI change, a mockup or description of what to change, attach image/file.
 
-### Will it affects any internal/external report?
-No
+### Change in email
 
-### Will it affects any email being sent out?
-No
+### Change in reports
